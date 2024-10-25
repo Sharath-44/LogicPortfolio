@@ -1,53 +1,65 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // import useNavigate
 
 export const Example = () => {
+  const navigate = useNavigate(); // initialize useNavigate
+
+  const handleContactClick = () => {
+    navigate("/contact"); // navigate to contact page
+  };
+
   return (
-    <div className="flex items-center justify-center bg-neutral-800 px-8 py-24 text-neutral-100">
-      <BlockInTextCard
-        tag="/ Support"
-        text={
-          <>
-            <strong>Have questions?</strong> I'd love to answer! Contact me...
-          </>
-        }
-        examples={[
-          "Does your product work for SMBs?",
-          "Can I pause my membership without losing my data?",
-          "What are my Hobbies?",
-          "What's the meaning of life?",
-        ]}
-      />
+    <div
+      className="max-h-fit flex justify-center items-center px-4"
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke-width='2' stroke='%23d4d4d4'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
+        backgroundRepeat: 'repeat',
+        backgroundSize: '32px 32px',
+      }}
+    >
+      <div className="bg-zinc-800 rounded-lg shadow-lg p-8 max-w-xl m-12 w-full">
+        <BlockInTextCard
+          tag="Support"
+          text={
+            <>
+              <strong>Have questions?</strong> I'd love to answer! Contact me...
+            </>
+          }
+          examples={[
+            "What is multithreading?",
+            "What do you think about Tesla Cars?",
+            "What is Virtual Memory?",
+            "How are paging and segmentation different?",
+          ]}
+          handleContactClick={handleContactClick} // pass down the handler
+        />
+      </div>
     </div>
   );
 };
 
-const BlockInTextCard = ({ tag, text, examples }) => {
+const BlockInTextCard = ({ tag, text, examples, handleContactClick }) => {
   return (
-    <div className="w-full max-w-xl space-y-6">
+    <div className="w-full space-y-6">
       <div>
-        <p className="mb-1.5 text-sm font-light uppercase">{tag}</p>
-        <hr className="border-neutral-300" />
+        <p className="mb-1.5 text-sm font-light uppercase text-white">{tag}</p>
+        <hr className="border-white" />
       </div>
-      <p className="max-w-lg text-xl leading-relaxed">{text}</p>
+      <p className="max-w-lg text-xl leading-relaxed text-white">{text}</p>
       <div>
         <Typewrite examples={examples} />
-        <hr className="border-neutral-500" />
+        <hr className="border-zinc-400" />
       </div>
-      <button className="w-full rounded-full border border-neutral-100 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 hover:text-neutral-800">
+      <button
+        className="w-full rounded-full border border-white py-2 text-sm font-medium transition-colors bg-white hover:bg-zinc-800 hover:text-white"
+        onClick={handleContactClick} // add onClick here
+      >
         Contact Me!!
       </button>
     </div>
   );
 };
-
-const LETTER_DELAY = 0.025;
-const BOX_FADE_DURATION = 0.125;
-
-const FADE_DELAY = 5;
-const MAIN_FADE_DURATION = 0.25;
-
-const SWAP_DELAY_IN_MS = 5500;
 
 const Typewrite = ({ examples }) => {
   const [exampleIndex, setExampleIndex] = useState(0);
@@ -55,14 +67,14 @@ const Typewrite = ({ examples }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setExampleIndex((pv) => (pv + 1) % examples.length);
-    }, SWAP_DELAY_IN_MS);
+    }, 5500);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [examples.length]);
 
   return (
-    <p className="mb-2.5 text-sm font-light uppercase">
-      <span className="inline-block size-2 bg-neutral-100" />
+    <p className="mb-2.5 text-sm font-light uppercase text-white">
+      <span className="inline-block size-2 bg-zinc-400" />
       <span className="ml-3">
         EXAMPLE:{" "}
         {examples[exampleIndex].split("").map((l, i) => (
@@ -74,8 +86,8 @@ const Typewrite = ({ examples }) => {
               opacity: 0,
             }}
             transition={{
-              delay: FADE_DELAY,
-              duration: MAIN_FADE_DURATION,
+              delay: 5,
+              duration: 0.25,
               ease: "easeInOut",
             }}
             key={`${exampleIndex}-${i}`}
@@ -89,7 +101,7 @@ const Typewrite = ({ examples }) => {
                 opacity: 1,
               }}
               transition={{
-                delay: i * LETTER_DELAY,
+                delay: i * 0.025,
                 duration: 0,
               }}
             >
@@ -103,12 +115,12 @@ const Typewrite = ({ examples }) => {
                 opacity: [0, 1, 0],
               }}
               transition={{
-                delay: i * LETTER_DELAY,
+                delay: i * 0.025,
                 times: [0, 0.1, 1],
-                duration: BOX_FADE_DURATION,
+                duration: 0.125,
                 ease: "easeInOut",
               }}
-              className="absolute bottom-[3px] left-[1px] right-0 top-[3px] bg-neutral-100"
+              className="absolute bottom-[3px] left-[1px] right-0 top-[3px] bg-zinc-400"
             />
           </motion.span>
         ))}

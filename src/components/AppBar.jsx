@@ -12,8 +12,8 @@ const AppBar = () => {
                     <div className="hidden md:flex space-x-6">
                         <a href="/projects" className="text-white hover:text-gray-200">Projects</a>
                         <a href="/skills" className="text-white hover:text-gray-200">Skills</a>
-                        <a href="" className="text-white hover:text-gray-200">Resume</a>
-                        <a href="/contact" className="text-white hover:text-gray-200">Contact</a>
+                        <a href="https://drive.google.com/file/d/1F0EKYXK-z9z4vE_BZCW143n3MdF3hWd3/view?usp=sharing" className="text-white hover:text-gray-200">Resume</a>
+                        <a href="/contact" className="text-white hover:text-gray-200">Contact Me</a>
                     </div>
 
                     <div className="md:hidden">

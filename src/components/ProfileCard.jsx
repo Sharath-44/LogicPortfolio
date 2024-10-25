@@ -22,18 +22,18 @@ const ProfileCard = () => {
 
         {/* Text Section */}
         <div className="w-full md:w-3/4 mt-8 md:mt-0"> 
-          <p className="uppercase tracking-wide text-sm text-gray-400">Bro... Who's this??</p>
-          <h1 className="text-6xl font-bold mt-2">Sharath M S</h1>
+          <p className="uppercase tracking-wide text-lg text-gray-400">Bro... Who's this??</p>
+          <h1 className="text-7xl font-bold mt-2">Sharath M S</h1>
           <h1 className="text-3xl font-bold mt-2">
             Currently, I’m a Senior student at PES University...
           </h1>
-          <p className="mt-4">
+          <p className="mt-4 text-3xl">
             In my 7th semester of Bachelor of Technology in Computer Science Engineering at
             <span className="font-semibold text-indigo-400"> PES University</span>. <br />I was also an intern at
             <span className="font-semibold text-indigo-400"> Seventh Sense Talent Solutions</span> and
             <span className="font-semibold text-indigo-400"> Center of Data Science and Applied Machine Learning</span>.
           </p>
-          <p className="mt-6">
+          <p className="mt-6 text-xl">
             Want to hire me?
             <a href="mailto:sharath.shashidhara@gmail.com" className="text-indigo-400 underline">
               <br />Drop me a line.

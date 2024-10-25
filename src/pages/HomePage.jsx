@@ -5,6 +5,8 @@ import ProfileCard from '../components/ProfileCard';
 import SwipeCards from '../components/SwipeCards';
 import { RevealBento } from '../components/RevealBento';
 import { Example } from '../components/BlockInTextCard';
+import CircleOverlay from '../components/CircleOverlay';
+import Education from '../components/Education';
 
 
 
@@ -16,7 +18,10 @@ const HomePage = () => {
             <ProfileCard />
             <RevealBento />
             <SwipeCards />
+            <CircleOverlay />
+            <Education />
             <Example />
+            
             <Footer />
         </div>
     );

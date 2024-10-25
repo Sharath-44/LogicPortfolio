@@ -5,17 +5,30 @@ const SwipeCards = () => {
   const [cards, setCards] = useState(cardData);
 
   return (
-    <div
-      className="grid h-[500px] w-full place-items-center bg-neutral-100"
-      style={{
-        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke-width='2' stroke='%23d4d4d4'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
-      }}
-    >
-      {cards.map((card) => {
-        return (
-          <Card key={card.id} cards={cards} setCards={setCards} {...card} />
-        );
-      })}
+    <div className="relative w-full flex justify-center items-center h-[500px] bg-neutral-100">
+      {/* Left text "my" */}
+      <div className="absolute left-20 text-3xl font-bold text-gray-800 pl-8">
+        CHECK OUT 
+      </div>
+
+      {/* Cards */}
+      <div
+        className="grid h-full w-full place-items-center"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke-width='2' stroke='%23d4d4d4'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
+        }}
+      >
+        {cards.map((card) => {
+          return (
+            <Card key={card.id} cards={cards} setCards={setCards} {...card} />
+          );
+        })}
+      </div>
+
+      {/* Right text "project" */}
+      <div className="absolute right-20 text-3xl font-bold text-gray-800 pr-8">
+        MY PROJECTS
+      </div>
     </div>
   );
 };
@@ -79,27 +92,27 @@ const Card = ({ id, url, title, setCards, cards }) => {
 const cardData = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "app.jpeg",
     title: "Event-Management-App"
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "pear.png",
     title: "File-Guard-Share"
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "kafka.png",
     title: "RealTime TempFlow"
   },
   {
     id: 4,
-    url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2224&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "hired.jpg",
     title: "HiredIn Media Website"
   },
   {
     id: 5,
-    url: "https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "/tire.png",
     title: "Tire Prognostication Precision"
   },
 ];
