@@ -12,7 +12,7 @@ const CircleOverlay = () => {
       background: 'center/80% no-repeat',
       cursor: 'pointer',
       display: 'grid',
-      color: 'black', // Changed to black
+      color: 'white', 
       fontSize: 'calc(var(--itemWidth) / 7)',
       placeItems: 'center',
       position: 'relative',
@@ -30,7 +30,6 @@ const CircleOverlay = () => {
       display: 'grid',
       gridTemplateRows: 'repeat(2, max-content)',
       gridTemplateColumns: 'repeat(3, calc(3vw + var(--itemWidth)))',
-      fontFamily: "'Averia Serif Libre', cursive",
       gap: '2rem',
       placeItems: 'center',
       textAlign: 'center',
@@ -51,12 +50,12 @@ const CircleOverlay = () => {
       padding: '0 10px',
       fontSize: '2.5rem',
       zIndex: 2,
-      color: 'black', // Change text color to white
+      color: 'black', 
     },
     title: {
       marginTop: '10px',
       fontSize: '1.2rem',
-      color: 'white', // Change title color to white
+      color: 'white', 
       textAlign: 'center',
     },
     h3: {
@@ -71,7 +70,7 @@ const CircleOverlay = () => {
       justifyContent: 'center',
       fontSize: '1.5rem',
       fontWeight: '500',
-      color: 'white', // Change heading color to white
+      color: 'white', 
     },
     wrapper: {
       display: 'grid',
@@ -81,7 +80,7 @@ const CircleOverlay = () => {
       padding: '0',
       width: '100%',
       textAlign: 'center',
-      backgroundColor: '#27272A', // Changed background color to zinc-800
+      backgroundColor: '#27272A', 
     },
     container: {
       display: 'flex',

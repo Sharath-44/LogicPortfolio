@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom"; // import useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 export const Example = () => {
-  const navigate = useNavigate(); // initialize useNavigate
+  const navigate = useNavigate(); 
 
   const handleContactClick = () => {
-    navigate("/contact"); // navigate to contact page
+    navigate("/contact"); 
   };
 
   return (
@@ -32,7 +32,7 @@ export const Example = () => {
             "What is Virtual Memory?",
             "How are paging and segmentation different?",
           ]}
-          handleContactClick={handleContactClick} // pass down the handler
+          handleContactClick={handleContactClick} 
         />
       </div>
     </div>
@@ -53,7 +53,7 @@ const BlockInTextCard = ({ tag, text, examples, handleContactClick }) => {
       </div>
       <button
         className="w-full rounded-full border border-white py-2 text-sm font-medium transition-colors bg-white hover:bg-zinc-800 hover:text-white"
-        onClick={handleContactClick} // add onClick here
+        onClick={handleContactClick}
       >
         Contact Me!!
       </button>

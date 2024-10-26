@@ -10,16 +10,16 @@ const Contact = () => {
 
         emailjs
             .sendForm(
-                "", // replace with your EmailJS service ID
-                "", // replace with your EmailJS template ID
+                "xxx", // replace with your EmailJS service ID
+                "xxx", // replace with your EmailJS template ID
                 form.current,
-                "" // replace with your EmailJS user ID
+                "xxx" // replace with your EmailJS user ID
             )
             .then(
                 (result) => {
                     console.log("Message sent successfully!", result.text);
                     window.alert("Your message has been sent successfully!");
-                    e.target.reset(); // clear form fields
+                    e.target.reset(); 
                 },
                 (error) => {
                     console.error("Error sending message:", error.text);
@@ -37,9 +37,7 @@ const Contact = () => {
         >
             <div className="container bg-zinc-800 text-white p-8 rounded-lg shadow-lg max-w-lg">
                 <h2 className="text-3xl font-semibold mb-6 text-center">Get in touch</h2>
-                
 
-                {/* Contact Form */}
                 <form ref={form} onSubmit={sendEmail} className="space-y-4">
                     <div>
                         <label className="block text-sm mb-2" htmlFor="name">

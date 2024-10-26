@@ -154,12 +154,12 @@ const LocationBlock = () => (
   </Block>
 );
 
-// Updated Question Block Component
+
 const QuestionBlock = () => {
-  const [isCorrect, setIsCorrect] = useState(null); // null for no answer yet
+  const [isCorrect, setIsCorrect] = useState(null); 
   const [showConfetti, setShowConfetti] = useState(false);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
-  const [shakingAnswerIndex, setShakingAnswerIndex] = useState(null); // Store the index of the shaking answer
+  const [shakingAnswerIndex, setShakingAnswerIndex] = useState(null); 
 
   const handleAnswer = (isAnswerCorrect, index) => {
     setSelectedAnswerIndex(index);
@@ -169,8 +169,8 @@ const QuestionBlock = () => {
       setTimeout(() => setShowConfetti(false), 3000); // Show confetti for 3 seconds
     } else {
       setIsCorrect(false);
-      setShakingAnswerIndex(index); // Set the clicked wrong answer to shake
-      setTimeout(() => setShakingAnswerIndex(null), 500); // Reset shake after 500ms
+      setShakingAnswerIndex(index);
+      setTimeout(() => setShakingAnswerIndex(null), 500); 
     }
   };
 
@@ -217,7 +217,7 @@ const QuestionBlock = () => {
                   : {}
               }
               transition={{ type: "spring", stiffness: 300 }}
-              disabled={selectedAnswerIndex !== null} // Disable buttons after selection
+              disabled={selectedAnswerIndex !== null} 
             >
               {answer.text}
             </motion.button>

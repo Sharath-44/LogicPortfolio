@@ -5,13 +5,10 @@ const SwipeCards = () => {
   const [cards, setCards] = useState(cardData);
 
   return (
-    <div className="relative w-full flex justify-center items-center h-[500px] bg-neutral-100">
-      {/* Left text "my" */}
-      <div className="absolute left-20 text-3xl font-bold text-gray-800 pl-8">
-        CHECK OUT 
+    <div className="relative w-full flex flex-col items-center h-[500px] bg-neutral-100">
+      <div className="absolute top-5 text-2xl font-bold text-gray-800">
+        Check Out My Projects
       </div>
-
-      {/* Cards */}
       <div
         className="grid h-full w-full place-items-center"
         style={{
@@ -25,8 +22,10 @@ const SwipeCards = () => {
         })}
       </div>
 
-      {/* Right text "project" */}
-      <div className="absolute right-20 text-3xl font-bold text-gray-800 pr-8">
+      <div className="hidden md:absolute md:left-20 md:top-5 md:text-3xl md:font-bold md:text-gray-800">
+        CHECK OUT
+      </div>
+      <div className="hidden md:absolute md:right-20 md:top-5 md:text-3xl md:font-bold md:text-gray-800">
         MY PROJECTS
       </div>
     </div>
@@ -55,7 +54,7 @@ const Card = ({ id, url, title, setCards, cards }) => {
 
   return (
     <motion.div
-      className="relative h-96 w-72 origin-bottom rounded-lg bg-white hover:cursor-grab active:cursor-grabbing"
+      className="relative h-60 w-64 md:h-96 md:w-72 origin-bottom rounded-lg bg-white hover:cursor-grab active:cursor-grabbing"
       style={{
         gridRow: 1,
         gridColumn: 1,
@@ -72,8 +71,8 @@ const Card = ({ id, url, title, setCards, cards }) => {
       }}
       drag={isFront ? "x" : false}
       dragConstraints={{
-        left: 0,
-        right: 0,
+        left: -100,
+        right: 100,
       }}
       onDragEnd={handleDragEnd}
     >
@@ -83,7 +82,7 @@ const Card = ({ id, url, title, setCards, cards }) => {
         className="h-full w-full object-cover rounded-lg"
       />
       <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
-        <h2 className="text-white text-xl font-semibold">{title}</h2>
+        <h2 className="text-white text-lg md:text-xl font-semibold">{title}</h2>
       </div>
     </motion.div>
   );
@@ -93,27 +92,27 @@ const cardData = [
   {
     id: 1,
     url: "app.jpeg",
-    title: "Event-Management-App"
+    title: "Event-Management-App",
   },
   {
     id: 2,
     url: "pear.png",
-    title: "File-Guard-Share"
+    title: "File-Guard-Share",
   },
   {
     id: 3,
     url: "kafka.png",
-    title: "RealTime TempFlow"
+    title: "RealTime TempFlow",
   },
   {
     id: 4,
     url: "hired.jpg",
-    title: "HiredIn Media Website"
+    title: "HiredIn Media Website",
   },
   {
     id: 5,
     url: "/tire.png",
-    title: "Tire Prognostication Precision"
+    title: "Tire Prognostication Precision",
   },
 ];
 

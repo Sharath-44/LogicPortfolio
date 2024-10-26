@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="mb-4">
           <a href="https://drive.google.com/file/d/1F0EKYXK-z9z4vE_BZCW143n3MdF3hWd3/view?usp=sharing" className="mx-4 text-gray-400 hover:text-white">Resume</a>
           <a href="/projects" className="mx-4 text-gray-400 hover:text-white">Projects</a>
-          <a href="/contact" className="mx-4 text-gray-400 hover:text-white">Contact</a>
+          <a href="/contact" className="mx-4 text-gray-400 hover:text-white">Contact Me</a>
         </div>
 
         {/* Copyright */}

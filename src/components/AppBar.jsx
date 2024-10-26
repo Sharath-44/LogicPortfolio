@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const AppBar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <div>
             <nav className="bg-zinc-800 p-4 shadow-md">
                 <div className="container mx-auto flex justify-between items-center">
-                    <div className="text-white text-xl font-bold">
-                        <a href="/"> Sharath M S</a>
+                    <div className="text-white text-xl font-bold px-4 py-2">
+                        <a href="/">Sharath M S</a>
                     </div>
 
                     <div className="hidden md:flex space-x-6">
@@ -17,7 +23,7 @@ const AppBar = () => {
                     </div>
 
                     <div className="md:hidden">
-                        <button className="text-white focus:outline-none">
+                        <button onClick={toggleMenu} className="text-white focus:outline-none">
                             <svg
                                 className="w-6 h-6"
                                 fill="none"
@@ -36,6 +42,17 @@ const AppBar = () => {
                     </div>
                 </div>
             </nav>
+
+            {isOpen && (
+                <div className="absolute left-0 right-0 bg-zinc-800 p-4 z-50">
+                    <div className="flex flex-col space-y-2">
+                        <a href="/projects" className="text-white hover:text-gray-200 px-4 py-2" onClick={() => setIsOpen(false)}>Projects</a>
+                        <a href="/skills" className="text-white hover:text-gray-200 px-4 py-2" onClick={() => setIsOpen(false)}>Skills</a>
+                        <a href="https://drive.google.com/file/d/1F0EKYXK-z9z4vE_BZCW143n3MdF3hWd3/view?usp=sharing" className="text-white hover:text-gray-200 px-4 py-2" onClick={() => setIsOpen(false)}>Resume</a>
+                        <a href="/contact" className="text-white hover:text-gray-200 px-4 py-2" onClick={() => setIsOpen(false)}>Contact Me</a>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
