@@ -1,8 +1,5 @@
-# React + Vite
+Check out the results : https://sharath-m-s.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Deployed on Netlify. Why? Coz its easy.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This application was built in hours with the help of components available on the internet and ofcourse with the help of gpt. This has no backend, cuz everything is static.
